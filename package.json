@@ -1,0 +1,19 @@
+{
+    "name": "adrar-lib-quizz",
+    "version": "1.0.0",
+    "description": "A lightweight library to use ADRARDEV API for quizz",
+    "scripts": {
+        "dev": "tsx watch index.ts",
+        "build": "tsc",
+        "tsc": "tsc src/*.ts"
+    },
+    "keywords": [],
+    "author": "Théo LAGACHE <theo@lagache.dev> (https://theo.lagache.dev)",
+    "license": "ISC",
+    "devDependencies": {
+        "@faker-js/faker": "^9.4.0",
+        "tsx": "^4.19.2",
+        "typescript": "^5.7.3"
+    },
+    "type": "module"
+}
