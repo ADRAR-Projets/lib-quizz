@@ -141,6 +141,19 @@ export default class AuthModule extends Module {
         }
     }
 
+    async isLogged(jwtToken: string): Promise<boolean> {
+        try {
+            const user = await this.makeRequest<User>("/api/me", { headers: { Authorization: `${jwtToken}` } });
+            if (user) {
+                return true;
+            }
+            return false;
+        } catch (error) {
+            console.error("Error fetch user data:", error);
+            return false;
+        }
+    }
+
     /**
      * Description placeholder
      *
