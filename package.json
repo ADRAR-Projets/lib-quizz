@@ -1,6 +1,6 @@
 {
     "name": "adrar-lib-quizz",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "A lightweight library to use ADRARDEV API for quizz",
     "scripts": {
         "dev": "tsx watch index.ts",
