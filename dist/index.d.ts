@@ -178,6 +178,7 @@ declare class AuthModule extends Module {
      * @returns {Promise<User[] | null>}
      */
     getUsers(jwtToken: string): Promise<User[] | null>;
+    isLogged(jwtToken: string): Promise<boolean>;
     /**
      * Description placeholder
      *

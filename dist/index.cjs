@@ -104,6 +104,18 @@ var AuthModule = class extends Module {
       return null;
     }
   }
+  async isLogged(jwtToken) {
+    try {
+      const user = await this.makeRequest("/api/me", { headers: { Authorization: `${jwtToken}` } });
+      if (user) {
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error("Error fetch user data:", error);
+      return false;
+    }
+  }
   /**
    * Description placeholder
    *
