@@ -96,7 +96,7 @@ export default class QuizzModule extends Module {
      * Creates an instance of QuizzModule.
      *
      * @constructor
-     * @param {API} api 
+     * @param {API} api
      */
     constructor(api: API) {
         super(api);
@@ -111,12 +111,12 @@ export default class QuizzModule extends Module {
      * Description placeholder
      *
      * @async
-     * @param {string} jwtToken 
-     * @returns {Promise<Quizz[] | null>} 
+     * @param {string} jwtToken
+     * @returns {Promise<Quizz[] | null>}
      */
     async getQuizz(jwtToken: string): Promise<Quizz[] | null> {
         try {
-            const quizz = await this.makeRequest<Quizz[]>("/api/quizz/all", { headers: { Authorization: `${jwtToken}` } });
+            const quizz = await this.makeRequest<Quizz[]>("/api/quizzs/all", { headers: { Authorization: `${jwtToken}` } });
             return quizz;
         } catch (error) {
             console.error("Error fetch quizzes", error);
@@ -128,9 +128,9 @@ export default class QuizzModule extends Module {
      * Description placeholder
      *
      * @async
-     * @param {number} id 
-     * @param {string} jwtToken 
-     * @returns {Promise<Quizz | null>} 
+     * @param {number} id
+     * @param {string} jwtToken
+     * @returns {Promise<Quizz | null>}
      */
     async get(id: number, jwtToken: string): Promise<Quizz | null> {
         try {
@@ -146,9 +146,9 @@ export default class QuizzModule extends Module {
      * Uniquement les ROLE_ADMIN peuvent créer un quizz
      *
      * @async
-     * @param {CreateQuizz} quizzCreate 
-     * @param {string} jwtToken 
-     * @returns {Promise<Quizz | null>} 
+     * @param {CreateQuizz} quizzCreate
+     * @param {string} jwtToken
+     * @returns {Promise<Quizz | null>}
      */
     async create(quizzCreate: CreateQuizz, jwtToken: string): Promise<Quizz | null> {
         try {
